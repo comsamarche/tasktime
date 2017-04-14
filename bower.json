@@ -1,0 +1,25 @@
+{
+  "name": "tasktime",
+  "homepage": "https://github.com/protobox/protobox",
+  "authors": [
+    "Guinaudeau Christine <comsamarche@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "^2.3.3",
+    "chaplin": "^1.2.0",
+    "jquery": "^3.2.1",
+    "materialize": "^0.98.1",
+    "handlebars": "^4.0.5",
+    "text": "requirejs-text#^2.0.15"
+  }
+}
