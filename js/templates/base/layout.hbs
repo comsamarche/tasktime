@@ -1,2 +1,43 @@
-	<p>salut</p>
-	<div id="list-container"></div>
+	
+{{!-- <div id="container"> --}}
+	<nav>
+		<div class="nav-wrapper teal darken-4">
+			<a href="#" class="brand-logo center">TaskTime, io!</a>
+		</div>
+	</nav>
+
+	<div class="row">
+		<div class="col s12">
+			<form id="form-container" class="card-panel haverable">
+				<div class="row">
+					<div class="col s12">
+						<div class="row">
+							<div id="form">
+								<div class="input-fiel col s5">
+									<input type="text" placeholder="Nom de la Tâche" id="task" class="validate title">
+								</div>
+								<div class="input-fiel col s5">
+									<input type="text" placeholder="Projet" id="project" class="validate project">
+								</div>
+								<div class="input-fiel col s2">
+									<button class="go waves-effect waves-light btn teal darken-4">Go !</button>
+								</div>
+							</div>
+							<div id="timer">
+								<div class="input-field col s5 description">
+								</div>
+								<div class="input-field col s5 timer-container">00:00:00</div>
+								<div class="input-field col s2">
+									<button class="stop waves-effect waves-light btn red darken-4">stop !</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>			
+		</div>
+
+		<div id="list-container" class="card-panel hoverable">
+		</div>
+	</div>
+{{!-- </div> --}}

@@ -3,13 +3,27 @@ define(['chaplin', 'models/base/model'] , function(Chaplin, Model){
 
 	var TaskModel = Model.extend({
 
+		initialize: function(){
+
+			this.on('change', function(){
+				this.set('getRealTime', this.getRealTime());
+			});
+
+		},
+		getRealTime: function(){
+
+			var date = new Date(null);
+			date.setSeconds(parseInt(this.get('time')));
+			return date.toISOString().substr(11,8);
+
+		},
 		defaults : {
-			task: "Creer le moule d'application",
-			project : 'Creer ma tache',
-			time : 0, 
-			getTime: function(){
-				return !this.time ? 'pas de temps' : '00:00:00'
-			}
+			task: "titre de tâche",
+			project : 'exemple de project',
+			time : 0
+			// ,getTime: function(){
+			// 	return !this.time ? 'pas de temps' : '00:00:00'
+			// }
 		}
 
 	});
