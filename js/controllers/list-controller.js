@@ -1,4 +1,4 @@
-define(['chaplin', 'controllers/base/controller','views/list-view'], function(Chaplin, Controller, ListView){
+define(['chaplin', 'controllers/base/controller','views/list-view', 'models/task-collection'], function(Chaplin, Controller, ListView, TaskCollection){
 	'use strict';
 
 	var Controller = Controller.extend({
@@ -37,17 +37,27 @@ define(['chaplin', 'controllers/base/controller','views/list-view'], function(Ch
 			/*
 			** AVEC MEDIATOR
 			*/
-			Chaplin.mediator.subscribe('createNewTask', function(task){
+			//  Chaplin.mediator.subscribe('createNewTask', function(task){
 
-				var view = new ListView({
-					region: 'list',
-					tagName: 'p', 
-					model:task
-				});
+			// 	var view = new ListView({
+			// 		region: 'list'
+			// // 		tagName: 'ul',
+			// // 		className: 'collection',
+			// // 		model:task
+			// 	});
 
-				that.view = view;
+			//  	that.view = view;
 
-			});			
+			// });		
+
+			var view = new ListView({
+				region: 'list',
+				tagName: 'ul',
+				className: 'collection'
+			});
+
+			that.view = view;
+
 		}
 
 	});

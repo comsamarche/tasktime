@@ -6,14 +6,14 @@ define(['chaplin', 'models/base/model'] , function(Chaplin, Model){
 		initialize: function(){
 
 			this.on('change', function(){
-				this.set('getRealTime', this.getRealTime());
+				this.set('formattedTime', this.generateFormattedTime(this.get('time')));
 			});
 
 		},
-		getRealTime: function(){
+		generateFormattedTime: function(time){
 
 			var date = new Date(null);
-			date.setSeconds(parseInt(this.get('time')));
+			date.setSeconds(parseInt(time));
 			return date.toISOString().substr(11,8);
 
 		},

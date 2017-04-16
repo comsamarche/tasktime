@@ -35,13 +35,16 @@ define(['chaplin', 'views/layout-view', 'models/task'], function(Chaplin, Layout
 				timerInterval = setInterval(function(){
 					var time = parseInt(taskModel.get('time'));
 					taskModel.set('time', time+1);
-					timerContainer.text(taskModel.getRealTime());
+					timerContainer.text(taskModel.get('formattedTime'));
 				}, 1000);
-
 			});
 
 		},
 		addTaskHandler: function(){
+
+			Chaplin.mediator.subscribe('totalTime', function(time){
+				$('.totalTime').text(time);
+			})
 
 			$('.stop').on('click', function(e) {
 				e.preventDefault();
